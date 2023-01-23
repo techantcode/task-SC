@@ -42,7 +42,7 @@ const productByCities = async (req, res) => {
         const data = await product.find(
             {
                 "$or": [
-                    { cities: { $regex: req.params.key } }
+                    { cities: { $regex: req.params.key/i } }
                 ]
             },
         );
