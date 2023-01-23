@@ -37,12 +37,12 @@ const productsData = async (req, res) => {
 };
 
 const productByCities = async (req, res) => {
-    console.log(req.params.key);
+    //console.log(req.params.key);
     try {
         const data = await product.find(
             {
                 "$or": [
-                    { cities: { $regex: /^req.params.key$/i } }
+                    { cities: { $regex: req.params.key } }
                 ]
             },
         );
